@@ -163,20 +163,21 @@ def load_excel_or_csv(file_or_path):
     else:
         raise ValueError("Formato não suportado.")
 
-st.title("Bot de planilha de tênis de corrida")
+#st.title("Bot de planilha de tênis de corrida")
 
-uploaded_file = st.file_uploader(
-    "Trocar planilha (opcional)",
-    type=["xlsx", "xls", "xlsm", "csv"]
-)
+#uploaded_file = st.file_uploader(
+#    "Trocar planilha (opcional)",
+#    type=["xlsx", "xls", "xlsm", "csv"]
+#)
 
-source = uploaded_file if uploaded_file is not None else DEFAULT_FILE
+#source = uploaded_file if uploaded_file is not None else DEFAULT_FILE
+source = DEFAULT_FILE
 df = load_excel_or_csv(source)
 
-if uploaded_file is None:
-    st.info(f"Usando planilha padrão: {DEFAULT_FILE}")
-else:
-    st.info(f"Usando planilha enviada: {uploaded_file.name}")
+#if uploaded_file is None:
+#    st.info(f"Usando planilha padrão: {DEFAULT_FILE}")
+#else:
+#    st.info(f"Usando planilha enviada: {uploaded_file.name}")
 
 #st.dataframe(df.head())
 
