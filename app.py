@@ -202,16 +202,16 @@ if client is None:
 
 col1, col2 = st.columns([1.2, 1])
 
-with col1:
-    st.subheader("Prévia da planilha")
-    st.dataframe(df, use_container_width=True, height=420)
+#with col1:
+#    st.subheader("Prévia da planilha")
+#    st.dataframe(df, use_container_width=True, height=420)
 
-with col2:
-    st.subheader("Resumo")
-    st.write(f"**Linhas:** {len(df)}")
-    st.write(f"**Colunas:** {len(df.columns)}")
-    st.write("**Colunas detectadas:**")
-    st.write(", ".join([str(c) for c in df.columns]))
+#with col2:
+#    st.subheader("Resumo")
+#    st.write(f"**Linhas:** {len(df)}")
+#    st.write(f"**Colunas:** {len(df.columns)}")
+#    st.write("**Colunas detectadas:**")
+#    st.write(", ".join([str(c) for c in df.columns]))
 
 st.divider()
 st.subheader("Pergunte sobre a planilha")
