@@ -139,14 +139,51 @@ st.caption("Envie uma planilha e faça perguntas sobre os modelos, categorias e 
  #   st.code("streamlit run app.py")
  #   st.markdown("3. Depois, troque o canal sem refazer a lógica: web agora, WhatsApp depois.")
 
+#uploaded_file = st.file_uploader(
+#    "Envie sua planilha (.xlsx, .xls, .xlsm ou .csv)",
+#    type=["xlsx", "xls", "xlsm", "csv"],
+#)
+
+#import os
+#import pandas as pd
+#import streamlit as st
+
+DEFAULT_FILE = "RunRepeat.xlsx"
+# ou "data/RunRepeat.xlsx"
+
+@st.cache_data
+def load_excel_or_csv(file_or_path):
+    name = file_or_path if isinstance(file_or_path, str) else file_or_path.name
+    ext = os.path.splitext(name)[1].lower()
+
+    if ext in [".xlsx", ".xls", ".xlsm"]:
+        return pd.read_excel(file_or_path)
+    elif ext == ".csv":
+        return pd.read_csv(file_or_path)
+    else:
+        raise ValueError("Formato não suportado.")
+
+st.title("Bot de planilha de tênis de corrida")
+
 uploaded_file = st.file_uploader(
-    "Envie sua planilha (.xlsx, .xls, .xlsm ou .csv)",
-    type=["xlsx", "xls", "xlsm", "csv"],
+    "Trocar planilha (opcional)",
+    type=["xlsx", "xls", "xlsm", "csv"]
 )
 
+source = uploaded_file if uploaded_file is not None else DEFAULT_FILE
+df = load_excel_or_csv(source)
+
 if uploaded_file is None:
-    st.info("Envie uma planilha para começar.")
-    st.stop()
+    st.info(f"Usando planilha padrão: {DEFAULT_FILE}")
+else:
+    st.info(f"Usando planilha enviada: {uploaded_file.name}")
+
+st.dataframe(df.head())
+
+
+#if uploaded_file is None:
+#    st.info("Envie uma planilha para começar.")
+#    st.stop()
 
 try:
     df = load_dataframe(uploaded_file)
