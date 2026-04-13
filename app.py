@@ -131,13 +131,13 @@ Instruções extras:
 st.title("👟 Bot de planilha de tênis de corrida")
 st.caption("Envie uma planilha e faça perguntas sobre os modelos, categorias e especificações.")
 
-with st.sidebar:
-    st.header("Configuração")
-    st.markdown("1. Crie um arquivo `.env` com sua chave da OpenAI.")
-    st.code("OPENAI_API_KEY=sua_chave_aqui\nOPENAI_MODEL=gpt-4.1-mini")
-    st.markdown("2. Rode o app com:")
-    st.code("streamlit run app.py")
-    st.markdown("3. Depois, troque o canal sem refazer a lógica: web agora, WhatsApp depois.")
+#with st.sidebar:
+ #   st.header("Configuração")
+ #   st.markdown("1. Crie um arquivo `.env` com sua chave da OpenAI.")
+ #   st.code("OPENAI_API_KEY=sua_chave_aqui\nOPENAI_MODEL=gpt-4.1-mini")
+ #   st.markdown("2. Rode o app com:")
+ #   st.code("streamlit run app.py")
+ #   st.markdown("3. Depois, troque o canal sem refazer a lógica: web agora, WhatsApp depois.")
 
 uploaded_file = st.file_uploader(
     "Envie sua planilha (.xlsx, .xls, .xlsm ou .csv)",
