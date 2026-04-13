@@ -215,7 +215,7 @@ col1, col2 = st.columns([1.2, 1])
 #    st.write(", ".join([str(c) for c in df.columns]))
 
 st.divider()
-st.subheader("Pergunte sobre a planilha")
+st.subheader("Pergunte algo sobre os tênis de corrida do mercado")
 question = st.text_input(
     "Exemplos: 'Quais são os tênis mais leves?', 'Qual modelo parece melhor para rodagem?', 'Quais têm drop acima de 8 mm?'"
 )
