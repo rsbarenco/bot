@@ -185,15 +185,15 @@ st.dataframe(df.head())
 #    st.info("Envie uma planilha para começar.")
 #    st.stop()
 
-try:
-    df = load_dataframe(uploaded_file)
-except Exception as e:
-    st.error(f"Não consegui ler a planilha: {e}")
-    st.stop()
+#try:
+#    df = load_dataframe(uploaded_file)
+#except Exception as e:
+#    st.error(f"Não consegui ler a planilha: {e}")
+#    st.stop()
 
-if df.empty:
-    st.warning("A planilha foi carregada, mas está vazia.")
-    st.stop()
+#if df.empty:
+#    st.warning("A planilha foi carregada, mas está vazia.")
+#    st.stop()
 
 client = get_openai_client()
 if client is None:
