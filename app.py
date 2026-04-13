@@ -178,7 +178,7 @@ if uploaded_file is None:
 else:
     st.info(f"Usando planilha enviada: {uploaded_file.name}")
 
-st.dataframe(df.head())
+#st.dataframe(df.head())
 
 
 #if uploaded_file is None:
