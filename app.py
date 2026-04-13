@@ -128,7 +128,7 @@ Instruções extras:
     return response.output_text.strip()
 
 
-st.title("👟 Bot de planilha de tênis de corrida")
+st.title("👟 Bot que responde sobre tênis de corrida")
 #st.caption("Envie uma planilha e faça perguntas sobre os modelos, categorias e especificações.")
 
 #with st.sidebar:
