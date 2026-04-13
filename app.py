@@ -8,7 +8,7 @@ import streamlit as st
 from openai import OpenAI
 
 
-st.set_page_config(page_title="Bot de planilha de tênis", page_icon="👟", layout="wide")
+st.set_page_config(page_title="Bot da Corrida", page_icon="👟", layout="wide")
 
 
 SYSTEM_PROMPT = """
